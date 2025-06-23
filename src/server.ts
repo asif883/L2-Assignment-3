@@ -10,7 +10,7 @@ const uri = process.env.DATABASE_URL as string;
 async function main() {
   try {
     await mongoose.connect(uri);
-    console.log('Connected to MongoDB');
+    // console.log('Connected to MongoDB');
 
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
