@@ -2,16 +2,12 @@
   "name": "l2-assignment3",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
     "start:prod": "node dist/server.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc",
-    "lint": "npx eslint .",
-    "lint:fix": "npx eslint . --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --loader ts-node/esm --respawn src/server.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
