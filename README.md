@@ -3,7 +3,7 @@
 A full-featured REST API built using **Express**, **TypeScript**, and **MongoDB** to manage books and borrowing in a digital library system.
 
 ---
-## Live URL: 
+## Live URL: https://l2-assignment-3-flame.vercel.app
 
 ## 🚀 Features
 
@@ -153,7 +153,6 @@ npm run dev
 ---
 
 ## 📽️ Video Demo
-Create a short video explaining the structure, features, and API endpoints for submission.
 
 ---
 
