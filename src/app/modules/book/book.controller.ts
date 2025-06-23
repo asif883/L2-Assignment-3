@@ -29,6 +29,7 @@ export const fetchAvailableBooks = async (_req: Request, res: Response) => {
   });
 };
 
+// find book by ID
 export const fetchBookById = async (req: Request, res: Response) => {
   const { bookId } = req.params;
   const book = await getBookById(bookId);
@@ -39,6 +40,7 @@ export const fetchBookById = async (req: Request, res: Response) => {
   });
 };
 
+// update book
 export const updateBookById = async (req: Request, res: Response) => {
   const { bookId } = req.params;
   const book = await updateBook(bookId, req.body);
@@ -49,6 +51,7 @@ export const updateBookById = async (req: Request, res: Response) => {
   });
 };
 
+// delete single book 
 export const deleteBookById = async (req: Request, res: Response) => {
   const { bookId } = req.params;
   await deleteBook(bookId);
