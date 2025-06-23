@@ -12,7 +12,7 @@ const bookSchema = new Schema<IBook, BookModel, IBookMethods>(
     },
     isbn: { type: String, required: true, unique: true },
     description: { type: String },
-    copies: { type: Number, required: true, min: 0 },
+    copies: { type: Number, required: true, min: [0, 'Copies must be a positive number'] },
     available: { type: Boolean, default: true },
   },
   {
@@ -47,7 +47,7 @@ bookSchema.pre('save', function (next) {
   next();
 });
 
-// Remove __v from JSON output
+// Remove _v from JSON output
 bookSchema.set('toJSON', {
   transform: (_doc, ret) => {
     delete ret.__v;
