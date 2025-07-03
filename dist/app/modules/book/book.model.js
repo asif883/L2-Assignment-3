@@ -17,11 +17,10 @@ const bookSchema = new mongoose_1.Schema({
     genre: {
         type: String,
         required: true,
-        enum: ['FICTION', 'NON_FICTION', 'SCIENCE', 'HISTORY', 'BIOGRAPHY', 'FANTASY'],
     },
     isbn: { type: String, required: true, unique: true },
     description: { type: String },
-    copies: { type: Number, required: true, min: 0 },
+    copies: { type: Number, required: true, min: [0, 'Copies must be a positive number'] },
     available: { type: Boolean, default: true },
 }, {
     timestamps: true,
@@ -53,7 +52,7 @@ bookSchema.pre('save', function (next) {
     }
     next();
 });
-// Remove __v from JSON output
+// Remove _v from JSON output
 bookSchema.set('toJSON', {
     transform: (_doc, ret) => {
         delete ret.__v;
